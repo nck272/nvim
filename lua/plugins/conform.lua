@@ -32,13 +32,12 @@ return {
             formatters_by_ft = {
                 c = { "clang-format" },
                 sh = { "shfmt" },
-                lua = { "prettier" },
+                lua = { "stylua" },
                 fish = { "fish_indent" },
                 json = { "prettier" },
                 java = { "clang-format" },
                 react = { "prettier" },
-                typescriptreact = { "prettier" }, 
-
+                typescriptreact = { "prettier" },
             },
         }
         return opts
