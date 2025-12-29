@@ -32,15 +32,15 @@ return {
             })
 
             vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-            vim.keymap.set("n", "<leader>o-", require("oil").toggle_float)
+            vim.keymap.set("n", "<leader>o-", require("oil").toggle_float, { desc = "Open toggle float" })
             vim.keymap.set("n", "<leader>o_", function()
                 vim.cmd("split")
                 require("oil").open()
-            end)
+            end, { desc = "Open parent split" })
             vim.keymap.set("n", "<leader>o|", function()
                 vim.cmd("vsplit")
                 require("oil").open()
-            end)
+            end, { desc = "Open parent vsplit" })
         end,
     },
 }
