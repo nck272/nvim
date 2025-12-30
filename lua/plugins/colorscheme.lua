@@ -1,13 +1,13 @@
+local scheme = "gruvbuddy"
 return {
     { "tjdevries/colorbuddy.nvim" },
+    { "tjdevries/gruvbuddy.nvim" },
     {
-        "tjdevries/gruvbuddy.nvim",
-
+        "folke/tokyonight.nvim",
         config = function()
-            vim.cmd.colorscheme("gruvbuddy")
+            vim.cmd.colorscheme(scheme)
         end,
     },
-    { "folke/tokyonight.nvim" },
     { "rose-pine/neovim" },
     { "Mofiqul/dracula.nvim" },
     {
@@ -26,4 +26,10 @@ return {
     { "aliqyan-21/darkvoid.nvim" },
     { "ficcdaf/ashen.nvim" },
     { "https://gitlab.com/motaz-shokry/gruvbox.nvim" },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = scheme,
+        },
+    },
 }
