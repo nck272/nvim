@@ -5,6 +5,9 @@ opt.tabstop = 4
 opt.softtabstop = 4
 opt.expandtab = true
 
+-- Enable truecolor support
+opt.termguicolors = true
+
 -- This makes nvim use the system clipboard by default for all yanks
 vim.opt.clipboard = "unnamedplus"
 
