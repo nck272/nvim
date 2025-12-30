@@ -2,12 +2,7 @@ local scheme = "gruvbuddy"
 return {
     { "tjdevries/colorbuddy.nvim" },
     { "tjdevries/gruvbuddy.nvim" },
-    {
-        "folke/tokyonight.nvim",
-        config = function()
-            vim.cmd.colorscheme(scheme)
-        end,
-    },
+    { "folke/tokyonight.nvim" },
     { "rose-pine/neovim" },
     { "Mofiqul/dracula.nvim" },
     {
@@ -31,5 +26,8 @@ return {
         opts = {
             colorscheme = scheme,
         },
+        config = function()
+            vim.cmd.colorscheme(scheme)
+        end,
     },
 }
