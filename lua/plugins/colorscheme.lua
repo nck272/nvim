@@ -1,4 +1,4 @@
-local scheme = "gruvbuddy"
+local scheme = "tokyonight"
 return {
     { "tjdevries/colorbuddy.nvim" },
     { "tjdevries/gruvbuddy.nvim" },
