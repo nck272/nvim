@@ -21,7 +21,13 @@ return {
                 },
 
                 lualine_b = {},
-                lualine_c = { "%=", "filename" },
+                lualine_c = {
+                    "%=",
+                    {
+                        "filename",
+                        path = 3,
+                    },
+                },
                 lualine_x = {},
                 lualine_y = {
                     {
