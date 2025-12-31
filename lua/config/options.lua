@@ -10,6 +10,9 @@ opt.expandtab = true
 opt.smartcase = true
 opt.ignorecase = true
 
+opt.number = true
+opt.relativenumber = true
+
 opt.splitbelow = true
 opt.splitright = true
 
