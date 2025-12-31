@@ -28,7 +28,13 @@ require("lazy").setup({
     },
     { import = "plugins" },
     { "folke/noice.nvim", enabled = false },
-    { "snacks.nvim", opts = { words = { enabled = false } } },
+    {
+      "snacks.nvim",
+      opts = {
+        words = { enabled = false },
+        explorer = { enabled = false },
+      },
+    },
   },
   defaults = {
     lazy = false,
@@ -37,6 +43,9 @@ require("lazy").setup({
 })
 
 vim.cmd.colorscheme(scheme)
+
+vim.keymap.del("n", "<leader>e")
+vim.keymap.del("n", "<leader>fe")
 
 -- vim.cmd([[
 --   hi Normal           guibg=none
