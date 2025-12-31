@@ -12,17 +12,20 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         os.exit(1)
     end
 end
+
 vim.opt.rtp:prepend(lazypath)
 
--- require("lazy").setup({ import = "plugins" }, {
---     change_detection = {
---         notify = false,
---     },
--- })
+local scheme = "gruvbuddy"
 
 require("lazy").setup({
     spec = {
-        { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+        {
+            "LazyVim/LazyVim",
+            import = "lazyvim.plugins",
+            opts = {
+                colorscheme = scheme,
+            },
+        },
         { import = "plugins" },
         { "folke/noice.nvim", enabled = false },
     },
@@ -31,6 +34,8 @@ require("lazy").setup({
         version = false,
     },
 })
+
+vim.cmd.colorscheme(scheme)
 
 -- vim.cmd([[
 --   hi Normal           guibg=none
