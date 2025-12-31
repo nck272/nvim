@@ -19,13 +19,13 @@ return {
                     },
                 },
                 stylua = {
-                    prepend_args = function(_, ctx)
-                        return { "--indent-width", vim.bo[ctx.buf].shiftwidth, "--indent-type", "Spaces" }
+                    prepend_args = function()
+                        return { "--indent-width", 2, "--indent-type", "Spaces" }
                     end,
                 },
                 prettier = {
-                    prepend_args = function(_, ctx)
-                        return { "--tab-width", vim.bo[ctx.buf].shiftwidth }
+                    prepend_args = function()
+                        return { "--tab-width", 2 }
                     end,
                 },
             },
