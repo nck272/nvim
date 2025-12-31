@@ -42,6 +42,10 @@ require("lazy").setup({
   },
 })
 
+require("config.options")
+require("config.terminal")
+require("config.keymaps")
+
 vim.cmd.colorscheme(scheme)
 
 vim.keymap.del("n", "<leader>e")
