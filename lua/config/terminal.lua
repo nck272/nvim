@@ -19,7 +19,7 @@ set("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Terminal Escape" })
 set("n", "<leader>t_", function()
   vim.cmd.new()
   vim.cmd.wincmd("J")
-  vim.api.nvim_win_set_height(0, 12)
+  vim.api.nvim_win_set_height(0, 20)
   vim.wo.winfixheight = true
   vim.cmd.term()
 end, { desc = "Terminal Split" })
