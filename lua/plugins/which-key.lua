@@ -7,8 +7,6 @@ return {
       colors = true,
     },
     spec = {
-      { "<leader>o", group = "oil", icon = "󰉖" },
-      { "<leader>h", group = "harpoon", icon = "󰛢" },
       { "<leader>t", group = "terminal", icon = "󰞷" },
     },
   },
