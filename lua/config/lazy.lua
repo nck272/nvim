@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -14,7 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local scheme = "tokyonight"
+local default_scheme = "gruvbuddy"
 
 require("lazy").setup({
   spec = {
@@ -22,7 +22,18 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = scheme,
+        news = {
+          lazyvim = false,
+          neovim = false,
+        },
+        colorscheme = "default",
+      },
+    },
+    { "nvim-lualine/lualine.nvim", enabled = false },
+    {
+      "folke/snacks.nvim",
+      opts = {
+        scroll = { enabled = false },
       },
     },
     { import = "plugins" },
@@ -31,7 +42,6 @@ require("lazy").setup({
     lazy = false,
     version = false,
   },
-  install = { colorscheme = { "tokyonight", "habamax" } },
   checker = {
     enabled = true,
     notify = false,
@@ -48,4 +58,6 @@ require("lazy").setup({
     },
   },
 })
-vim.cmd.colorscheme(scheme)
+
+
+vim.cmd.colorscheme(default_scheme)

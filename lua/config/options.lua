@@ -1,16 +1,16 @@
 local opt = vim.opt
 
--- Spacing
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.expandtab = true
+opt.relativenumber = false
 
 -- Enable truecolor support
 opt.termguicolors = true
 
 -- This makes nvim use the system clipboard by default for all yanks
-opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
