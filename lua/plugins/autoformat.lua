@@ -37,7 +37,10 @@ return {
       formatters_by_ft = {
         go = { "goimports", "gofmt" },
         lua = { "stylua" },
-        html = { "superhtml" },
+        sql = { "sqlfmt" },
+        css = { "prettier" },
+        html = { "prettier" },
+        json = { "prettier" },
         ocaml = { "ocamlformat" },
         javascript = { "prettier" },
         typescript = { "prettier" },
