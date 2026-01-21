@@ -12,6 +12,8 @@ opt.termguicolors = true
 -- This makes nvim use the system clipboard by default for all yanks
 vim.opt.clipboard = "unnamedplus"
 
+vim.opt.winbar = "%f"
+
 if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
     name = "WslClipboard",
