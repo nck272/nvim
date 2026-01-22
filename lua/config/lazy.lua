@@ -36,6 +36,14 @@ require("lazy").setup({
         scroll = { enabled = false },
       },
     },
+    {
+      "folke/noice.nvim",
+      opts = {
+        cmdline = { enabled = false },
+        messages = { enabled = false },
+        popupmenu = { enabled = false },
+      },
+    },
     { import = "plugins" },
   },
   defaults = {
