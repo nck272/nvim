@@ -29,13 +29,6 @@ require("lazy").setup({
         colorscheme = curr_scheme,
       },
     },
-    { "nvim-lualine/lualine.nvim", enabled = false },
-    {
-      "folke/snacks.nvim",
-      opts = {
-        scroll = { enabled = false },
-      },
-    },
     {
       "folke/noice.nvim",
       opts = {

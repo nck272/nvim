@@ -1,84 +1,94 @@
 return {
   {
     "ribru17/bamboo.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "tjdevries/colorbuddy.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "tjdevries/gruvbuddy.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "bjarneo/aether.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "bjarneo/ethereal.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "bjarneo/hackerman.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "sainnhe/everforest",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "kepano/flexoki-neovim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "ellisonleao/gruvbox.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "rebelot/kanagawa.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "tahayvr/matteblack.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "loctvl842/monokai-pro.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "shaunsingh/nord.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = true,
+    lazy = false,
     priority = 1000,
   },
   {
     "folke/tokyonight.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
+    {
+      "navarasu/onedark.nvim",
+      lazy = false,
+      priority = 1000, -- make sure to load this before all the other start plugins
+      config = function()
+        require("onedark").setup({
+          style = "darker",
+        })
+      end,
+    },
   },
 }
