@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+require("config.terminal")
 
 -- -- transparent background
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
