@@ -26,6 +26,6 @@ end, { desc = "Terminal Split" })
 
 set("n", "<leader>t|", function()
   vim.cmd.vsplit()
-  vim.api.nvim_win_set_width(0, 80)
+  vim.api.nvim_win_set_width(0, 60)
   vim.cmd.term()
 end, { desc = "Terminal VSplit" })
