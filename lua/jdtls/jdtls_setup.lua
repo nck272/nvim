@@ -2,6 +2,7 @@ local M = {}
 function M:setup()
   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
   local workspace_dir = vim.fn.expand("~/.jdtls/development/jdtls_java/") .. project_name
+  local lombok_jar = vim.fn.expand("~/.local/share/lombok.jar")
   local config = {
     cmd = {
       "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
@@ -16,6 +17,7 @@ function M:setup()
       "java.base/java.util=ALL-UNNAMED",
       "--add-opens",
       "java.base/java.lang=ALL-UNNAMED",
+      "-javaagent:" .. lombok_jar,  -- Move here
       "-jar",
       vim.fn.expand("~/.jdtls/org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar"),
       "-configuration",
@@ -23,6 +25,7 @@ function M:setup()
       "-data",
       workspace_dir,
     },
+    -- Remove vmargs section since you're handling JVM args directly in cmd
     root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
     settings = {
       java = {
