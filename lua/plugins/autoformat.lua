@@ -14,7 +14,6 @@ return {
       },
     },
     init = function()
-      -- Install the conform formatter on VeryLazy
       LazyVim.on_very_lazy(function()
         LazyVim.format.register({
           name = "conform.nvim",
@@ -37,12 +36,11 @@ return {
       formatters_by_ft = {
         go = { "goimports", "gofmt" },
         lua = { "stylua" },
-        sql = { "sqlfmt" },
         xml = { "xmlformatter" },
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
-        ocaml = { "ocamlformat" },
+        ocaml = { "ml-format" },
         python = { "black" },
         javascript = { "prettier" },
         typescript = { "prettier" },
@@ -54,7 +52,25 @@ return {
         lsp_format = "fallback", -- not recommended to change
       },
       formatters = {
-        injected = { options = { ignore_errors = true } },
+        ["ml-format"] = {
+          command = "ocamlformat",
+          args = {
+            "--enable-outside-detected-project",
+            "--profile=janestreet",
+            "--margin=80",
+            "--name",
+            "$FILENAME",
+            "-",
+          },
+        },
+        injected = {
+          options = {
+            ignore_errors = true,
+            lang_to_formatters = {
+              sql = { "sleek" },
+            },
+          },
+        },
       },
     },
   },
