@@ -1,0 +1,73 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+local curr_scheme = "gruvbuddy"
+
+require("lazy").setup({
+  spec = {
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = {
+        news = {
+          lazyvim = false,
+          neovim = false,
+        },
+        colorscheme = curr_scheme,
+      },
+    },
+    {
+      "folke/noice.nvim",
+      opts = {
+        cmdline = { enabled = false },
+        messages = { enabled = false },
+        popupmenu = { enabled = false },
+      },
+    },
+    {
+      "folke/snacks.nvim",
+      lazy = true,
+      opts = {
+        input = { enabled = false },
+        select = { enabled = false },
+        notifier = { enabled = false },
+        dashboard = { enabled = false },
+      },
+    },
+    { import = "plugins" },
+  },
+  defaults = {
+    lazy = false,
+    version = false,
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+})
+
+vim.cmd.colorscheme(curr_scheme)
