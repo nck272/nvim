@@ -10,6 +10,11 @@ return {
 
       -- Set the same icon and color for mlx files
       devicons.set_icon({
+        mll = {
+          icon = ocaml_icon,
+          color = ocaml_color,
+          name = "mll",
+        },
         mlx = {
           icon = ocaml_icon,
           color = ocaml_color,
@@ -18,7 +23,7 @@ return {
         mly = {
           icon = ocaml_icon,
           color = ocaml_color,
-          name = "mlx",
+          name = "mly",
         },
         re = {
           icon = ocaml_icon,
