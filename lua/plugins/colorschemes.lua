@@ -85,15 +85,26 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    {
-      "navarasu/onedark.nvim",
-      lazy = false,
-      priority = 1000, -- make sure to load this before all the other start plugins
-      config = function()
-        require("onedark").setup({
-          style = "darker",
-        })
-      end,
+    opts = {
+      style = "moon",     -- Choose between "storm", "moon", "night", or "day"
+      transparent = true, -- THIS IS THE KEY: it removes the solid background
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
     },
+    config = function(_, opts)
+      require("tokyonight").setup(opts)
+    end,
+  },
+  {
+    "navarasu/onedark.nvim",
+    lazy = false,
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("onedark").setup({
+        style = "darker",
+      })
+    end,
   },
 }

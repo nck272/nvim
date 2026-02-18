@@ -37,18 +37,21 @@ return {
         go = { "goimports", "gofmt" },
         lua = { "stylua" },
         xml = { "xmlformatter" },
-        css = { "prettier" },
-        html = { "prettier" },
-        json = { "prettier" },
+        css = { "prettierd" },
+        html = { "prettierd" },
+        json = { "prettierd" },
         ocaml = { "ml-format" },
+        react = { "prettier" },
         python = { "black" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
+        javascript = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettierd", "prettier", stop_after_first = true },
+        javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+        typescriptreact = { "prettierd", "prettier", stop_after_first = true },
       },
       default_format_opts = {
         timeout_ms = 3000,
-        async = false, -- not recommended to change
-        quiet = false, -- not recommended to change
+        async = false,           -- not recommended to change
+        quiet = false,           -- not recommended to change
         lsp_format = "fallback", -- not recommended to change
       },
       formatters = {
