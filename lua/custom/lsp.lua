@@ -47,7 +47,7 @@ M.setup = function(opts)
     if setup and setup(server, sopts) then
       mason_exclude[#mason_exclude + 1] = server
     else
-      vim.lsp.config(server, sopts)     -- configure the server
+      vim.lsp.config(server, sopts) -- configure the server
       if not use_mason then
         vim.lsp.enable(server)
       end

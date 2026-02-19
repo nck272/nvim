@@ -3,14 +3,6 @@ local k = vim.keycode
 local f = require("custom.f")
 local fn = f.fn
 
-set({ "i", "n", "s" }, "<esc>", function()
-  vim.cmd("noh")
-  if vim.snippet then
-    vim.snippet.stop()
-  end
-  return "<esc>"
-end, { expr = true, desc = "Escape and Clear hlsearch" })
-
 -- Basic movement keybinds, these make navigating splits easy for me
 set("n", "<c-j>", "<c-w><c-j>")
 set("n", "<c-k>", "<c-w><c-k>")
@@ -104,17 +96,7 @@ end, { expr = true })
 vim.keymap.set("n", "]]", "<cmd>cnext<CR>", { silent = true })
 vim.keymap.set("n", "[[", "<cmd>cprev<CR>", { silent = true })
 
-local root = require("snacks").util.root
-
-set("n", "<leader>gL", function()
-  require("snacks").picker.git_log()
-end, { desc = "Git Log (cwd)" })
-set("n", "<leader>gb", function()
-  require("snacks").picker.git_log_line()
-end, { desc = "Git Blame Line" })
-set("n", "<leader>gf", function()
-  require("snacks").picker.git_log_file()
-end, { desc = "Git Current File History" })
-set({ "n", "x" }, "<leader>gB", function()
-  require("snacks").gitbrowse()
-end, { desc = "Git Browse (open)" })
+vim.keymap.set('n', '<leader>ad', '<CMD>Glance definitions<CR>', { desc = 'Glance Definitions' })
+vim.keymap.set('n', '<leader>ar', '<CMD>Glance references<CR>', { desc = 'Glance References' })
+vim.keymap.set('n', '<leader>ay', '<CMD>Glance type_definitions<CR>', { desc = 'Glance Type Definitions' })
+vim.keymap.set('n', '<leader>am', '<CMD>Glance implementations<CR>', { desc = 'Glance Implementations' })
