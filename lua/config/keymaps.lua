@@ -96,7 +96,7 @@ end, { expr = true })
 vim.keymap.set("n", "]]", "<cmd>cnext<CR>", { silent = true })
 vim.keymap.set("n", "[[", "<cmd>cprev<CR>", { silent = true })
 
-vim.keymap.set("n", "gD", "<CMD>Glance definitions<CR>", { desc = "Glance Definitions" })
+vim.keymap.set("n", "gG", "<CMD>Glance definitions<CR>", { desc = "Glance Definitions" })
 vim.keymap.set("n", "gR", "<CMD>Glance references<CR>", { desc = "Glance References" })
 vim.keymap.set("n", "gY", "<CMD>Glance type_definitions<CR>", { desc = "Glance Type Definitions" })
 vim.keymap.set("n", "gM", "<CMD>Glance implementations<CR>", { desc = "Glance Implementations" })
