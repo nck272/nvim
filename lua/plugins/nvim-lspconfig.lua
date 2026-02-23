@@ -1,4 +1,5 @@
 local lsp = require("custom.lsp")
+local vtsls = require("custom.vtsls")
 
 return {
   {
@@ -7,18 +8,6 @@ return {
     dependencies = {
       "mason.nvim",
       { "mason-org/mason-lspconfig.nvim", config = function() end },
-      {
-        "dmmulroy/tsc.nvim",
-        config = function()
-          require("tsc").setup {
-            run_as_monorepo = true,
-          }
-        end,
-      },
-      {
-        "pmizio/typescript-tools.nvim",
-        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-      },
       "b0o/SchemaStore.nvim",
     },
     opts_extend = { "servers.*.keys" },
@@ -39,47 +28,27 @@ return {
           lua_ls = {
             cmd = { "lua-language-server" },
           },
+          tsserver = { enabled = false },
+          ts_ls = { enabled = false },
+          vue_ls = {},
+          vtsls = vtsls.opt,
         },
-        setup = {},
-
+        setup = {
+          tsserver = function()
+            return true
+          end,
+          ts_ls = function()
+            return true
+          end,
+          vtsls = function(_, opts)
+            vtsls.setup(opts)
+          end,
+        },
       }
       return ret
     end,
     config = vim.schedule_wrap(function(_, opts)
       lsp.setup(opts)
-      require("typescript-tools").setup {
-        settings = {
-          separate_diagnostic_server = true,
-          publish_diagnostic_on = "insert_leave",
-          jsx_close_tag = {
-            enable = true,
-            filetypes = { "javascriptreact", "typescriptreact" },
-          },
-          tsserver_file_preferences = {
-            includeInlayParameterNameHints = "all",
-            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-            includeInlayVariableTypeHints = true,
-            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-            includeInlayPropertyDeclarationTypeHints = true,
-            includeInlayFunctionParameterTypeHints = true,
-            includeInlayEnumMemberValueHints = true,
-            includeInlayFunctionLikeReturnTypeHints = true,
-            -- Enable auto imports
-            includeCompletionsForModuleExports = true,
-            includeCompletionsForImportStatements = true,
-          },
-
-          tsserver_format_options = {
-            insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = true,
-            semicolons = "insert",
-          },
-          complete_function_calls = true,
-          include_completions_with_insert_text = true,
-          code_lens = "off",
-          disable_member_code_lens = true,
-          tsserver_max_memory = 12288,
-        },
-      }
     end),
-  }
+  },
 }

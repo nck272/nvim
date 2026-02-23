@@ -43,6 +43,7 @@ return {
         ocaml = { "ml-format" },
         react = { "prettier" },
         python = { "black" },
+        vue = { "prettierd", "prettier", stop_after_first = true },
         javascript = { "prettierd", "prettier", stop_after_first = true },
         typescript = { "prettierd", "prettier", stop_after_first = true },
         javascriptreact = { "prettierd", "prettier", stop_after_first = true },
@@ -50,8 +51,8 @@ return {
       },
       default_format_opts = {
         timeout_ms = 3000,
-        async = false,           -- not recommended to change
-        quiet = false,           -- not recommended to change
+        async = false, -- not recommended to change
+        quiet = false, -- not recommended to change
         lsp_format = "fallback", -- not recommended to change
       },
       formatters = {
