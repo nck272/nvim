@@ -76,18 +76,31 @@ M.keys = {
   },
   {
     "gd",
-    vim.lsp.buf.definition,
+    function()
+      require("telescope.builtin").lsp_definitions({ reuse_win = true })
+    end,
     desc = "Goto Definition",
     has = "definition",
   },
+  { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References", nowait = true },
   {
-    "gr",
-    vim.lsp.buf.references,
-    desc = "References",
-    nowait = true,
+    "gI",
+    function()
+      require("telescope.builtin").lsp_implementations({ reuse_win = true })
+    end,
+    desc = "Goto Implementation",
   },
-  { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
-  { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
+  {
+    "gy",
+    function()
+      require("telescope.builtin").lsp_type_definitions({ reuse_win = true })
+    end,
+    desc = "Goto T[y]pe Definition",
+  },
+  -- { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+  -- { "gr", vim.lsp.buf.references, desc = "References", nowait = true },
+  -- { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
+  -- { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
   { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
   {
     "K",
