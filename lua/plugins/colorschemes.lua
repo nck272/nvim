@@ -86,7 +86,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      style = "moon",     -- Choose between "storm", "moon", "night", or "day"
+      style = "moon", -- Choose between "storm", "moon", "night", or "day"
       transparent = true, -- THIS IS THE KEY: it removes the solid background
       styles = {
         sidebars = "transparent",
@@ -100,11 +100,27 @@ return {
   {
     "navarasu/onedark.nvim",
     lazy = false,
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      require("onedark").setup({
-        style = "darker",
-      })
-    end,
+    priority = 1000,
+  },
+  {
+    "f4z3r/gruvbox-material.nvim",
+    name = "gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      italic = false,
+      contrast = "hard",
+      comments = { italics = false },
+      background = { transparent = true },
+      float = {
+        force_background = false,
+        background_color = nil,
+      },
+      signs = {
+        force_background = false,
+        background_color = nil,
+      },
+      customize = nil,
+    },
   },
 }
