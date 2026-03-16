@@ -86,8 +86,8 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      style = "moon", -- Choose between "storm", "moon", "night", or "day"
-      transparent = true, -- THIS IS THE KEY: it removes the solid background
+      style = "moon",
+      transparent = true,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
@@ -121,6 +121,31 @@ return {
         background_color = nil,
       },
       customize = nil,
+    },
+  },
+  {
+    "armannikoyan/rusty",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      italic_comments = true,
+      underline_current_line = true,
+      -- colors = {
+      --   foreground = "#c5c8c6",
+      --   background = "#1d1f21",
+      --   selection = "#373b41",
+      --   line = "#282a2e",
+      --   comment = "#969896",
+      --   red = "#cc6666",
+      --   orange = "#de935f",
+      --   yellow = "#f0c674",
+      --   green = "#b5bd68",
+      --   aqua = "#8abeb7",
+      --   blue = "#81a2be",
+      --   purple = "#b294bb",
+      --   window = "#4d5057",
+      -- },
     },
   },
 }

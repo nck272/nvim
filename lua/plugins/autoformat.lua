@@ -40,7 +40,7 @@ return {
         css = { "prettierd" },
         html = { "prettierd" },
         json = { "prettierd" },
-        ocaml = { "ml-format" },
+        ocaml = { "ocamlformat" },
         react = { "prettier" },
         python = { "black" },
         vue = { "prettierd", "prettier", stop_after_first = true },
@@ -51,22 +51,11 @@ return {
       },
       default_format_opts = {
         timeout_ms = 3000,
-        async = false, -- not recommended to change
-        quiet = false, -- not recommended to change
-        lsp_format = "fallback", -- not recommended to change
+        async = false,
+        quiet = false,
+        lsp_format = "fallback",
       },
       formatters = {
-        ["ml-format"] = {
-          command = "ocamlformat",
-          args = {
-            "--enable-outside-detected-project",
-            "--profile=janestreet",
-            "--margin=80",
-            "--name",
-            "$FILENAME",
-            "-",
-          },
-        },
         injected = {
           options = {
             ignore_errors = true,
