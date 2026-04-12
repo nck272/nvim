@@ -6,7 +6,7 @@ function M:setup()
   local lombok_jar = vim.fn.expand("~/.jdtls/lombok.jar")
   local config = {
     cmd = {
-      "/usr/lib/jvm/java-21-openjdk/bin/java",
+      "/home/nck272/.local/share/mise/installs/java/21.0.2/bin/java",
       "-Declipse.application=org.eclipse.jdt.ls.core.id1",
       "-Dosgi.bundles.defaultStartLevel=4",
       "-Declipse.product=org.eclipse.jdt.ls.core.product",
@@ -15,12 +15,17 @@ function M:setup()
       "-Xmx1g",
       "--add-modules=jdk.incubator.vector",
       "--add-modules=ALL-SYSTEM",
-      "--add-opens", "java.base/java.util=ALL-UNNAMED",
-      "--add-opens", "java.base/java.lang=ALL-UNNAMED",
+      "--add-opens",
+      "java.base/java.util=ALL-UNNAMED",
+      "--add-opens",
+      "java.base/java.lang=ALL-UNNAMED",
       "-javaagent:" .. lombok_jar,
-      "-jar", vim.fn.expand("~/.jdtls/org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar"),
-      "-configuration", vim.fn.expand("~/.jdtls/config_linux"),
-      "-data", workspace_dir,
+      "-jar",
+      vim.fn.expand("~/.jdtls/org.eclipse.equinox.launcher_1.7.100.v20251111-0406.jar"),
+      "-configuration",
+      vim.fn.expand("~/.jdtls/config_linux"),
+      "-data",
+      workspace_dir,
     },
     root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
     settings = {
@@ -36,9 +41,9 @@ function M:setup()
         },
         project = {
           referencedLibraries = {
-            vim.fn.expand("~/.jdtls/commons-lang3-3.20.0.jar"),
-          }
-        }
+            vim.fn.expand("~/.jdtls/commons-lang3-3.20.0/commons-lang3-3.20.0.jar"),
+          },
+        },
       },
     },
     init_options = {
