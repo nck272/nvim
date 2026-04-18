@@ -3,7 +3,6 @@ require("config.lazy")
 require("config.clipboard")
 require("config.filetypes")
 require("config.keymaps")
-require("config.menu")
 require("config.options")
 require("config.terminal")
 

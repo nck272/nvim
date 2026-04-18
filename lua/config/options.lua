@@ -35,10 +35,9 @@ opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a (nvim)'
 
 opt.undofile = true
 
-opt.termguicolors = true -- True color support
+opt.termguicolors = true
 
 vim.api.nvim_create_user_command("Unique", function()
-  -- get visual selection
   local start_line = vim.fn.getpos("'<")[2]
   local end_line = vim.fn.getpos("'>")[2]
 

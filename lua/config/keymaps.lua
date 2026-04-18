@@ -3,12 +3,6 @@ local k = vim.keycode
 local f = require("custom.f")
 local fn = f.fn
 
--- Basic movement keybinds, these make navigating splits easy for me
-set("n", "<c-j>", "<c-w><c-j>")
-set("n", "<c-k>", "<c-w><c-k>")
-set("n", "<c-l>", "<c-w><c-l>")
-set("n", "<c-h>", "<c-w><c-h>")
-
 set("n", ",x", "<cmd>.lua<CR>", { desc = "Execute the current line" })
 set("n", ",,x", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
@@ -23,28 +17,10 @@ set("n", "<CR>", function()
   end
 end, { expr = true })
 
--- Normally these are not good mappings, but I have left/right on my thumb
--- cluster, so navigating tabs is quite easy this way.
-set("n", "<left>", "gT")
-set("n", "<right>", "gt")
-
 -- There are builtin keymaps for this now, but I like that it shows
 -- the float when I navigate to the error - so I override them.
 set("n", "]d", fn(vim.diagnostic.jump, { count = 1, float = true }))
 set("n", "[d", fn(vim.diagnostic.jump, { count = -1, float = true }))
-
--- Save file
-set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
-
--- Better indenting
-set("x", "<", "<gv")
-set("x", ">", ">gv")
-
--- These mappings control the size of splits (height/width)
-set("n", "<M-,>", "<c-w>5<")
-set("n", "<M-.>", "<c-w>5>")
-set("n", "<M-t>", "<C-W>+")
-set("n", "<M-s>", "<C-W>-")
 
 set("n", "<M-j>", function()
   if vim.opt.diff:get() then
@@ -96,7 +72,7 @@ end, { expr = true })
 vim.keymap.set("n", "]]", "<cmd>cnext<CR>", { silent = true })
 vim.keymap.set("n", "[[", "<cmd>cprev<CR>", { silent = true })
 
-vim.keymap.set('n', '<leader>ad', '<CMD>Glance definitions<CR>', { desc = 'Glance Definitions' })
-vim.keymap.set('n', '<leader>ar', '<CMD>Glance references<CR>', { desc = 'Glance References' })
-vim.keymap.set('n', '<leader>ay', '<CMD>Glance type_definitions<CR>', { desc = 'Glance Type Definitions' })
-vim.keymap.set('n', '<leader>am', '<CMD>Glance implementations<CR>', { desc = 'Glance Implementations' })
+vim.keymap.set("n", "<leader>ad", "<CMD>Glance definitions<CR>", { desc = "Glance Definitions" })
+vim.keymap.set("n", "<leader>ar", "<CMD>Glance references<CR>", { desc = "Glance References" })
+vim.keymap.set("n", "<leader>ay", "<CMD>Glance type_definitions<CR>", { desc = "Glance Type Definitions" })
+vim.keymap.set("n", "<leader>am", "<CMD>Glance implementations<CR>", { desc = "Glance Implementations" })

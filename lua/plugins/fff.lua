@@ -6,25 +6,36 @@ return {
       -- (if you are using lazy you can use gb for rebuilding a plugin if needed)
       require("fff.download").download_or_build_binary()
     end,
-    opts = {},
+    config = function()
+      require("fff").setup({
+        prompt = "> ",
+        lazy_sync = false,
+      })
+    end,
+    opts = {
+      debug = {
+        enabled = false,
+        show_scores = false,
+      },
+    },
     lazy = false,
     keys = {
       {
-        "ff",
+        "<leader>fd",
         function()
           require("fff").find_files()
         end,
         desc = "FFFind files",
       },
       {
-        "fg",
+        "<leader>fg",
         function()
           require("fff").live_grep()
         end,
         desc = "LiFFFe grep",
       },
       {
-        "fz",
+        "<leader>fz",
         function()
           require("fff").live_grep({
             grep = {
@@ -35,7 +46,7 @@ return {
         desc = "Live fffuzy grep",
       },
       {
-        "fc",
+        "<leader>fw",
         function()
           require("fff").live_grep({ query = vim.fn.expand("<cword>") })
         end,
