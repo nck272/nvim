@@ -6,7 +6,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons", -- optional, but recommended
+      "nvim-tree/nvim-web-devicons",
     },
     opts = {
       window = {
@@ -15,6 +15,19 @@ return {
         },
       },
     },
+    config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+            visible = true,
+            hide_dotfiles = false,
+            hide_gitignored = false,
+            hide_hidden = false,
+            show_hidden = true,
+          },
+        },
+      })
+    end,
     keys = {
       {
         "<leader>e",
