@@ -10,9 +10,9 @@ return {
       {
         "dmmulroy/tsc.nvim",
         config = function()
-          require("tsc").setup {
+          require("tsc").setup({
             run_as_monorepo = true,
-          }
+          })
         end,
       },
       {
@@ -41,13 +41,12 @@ return {
           },
         },
         setup = {},
-
       }
       return ret
     end,
     config = vim.schedule_wrap(function(_, opts)
       lsp.setup(opts)
-      require("typescript-tools").setup {
+      require("typescript-tools").setup({
         settings = {
           separate_diagnostic_server = true,
           publish_diagnostic_on = "insert_leave",
@@ -79,7 +78,7 @@ return {
           disable_member_code_lens = true,
           tsserver_max_memory = 12288,
         },
-      }
+      })
     end),
-  }
+  },
 }

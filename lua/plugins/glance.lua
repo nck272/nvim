@@ -1,4 +1,4 @@
 return {
-  'dnlhc/glance.nvim',
-  cmd = 'Glance',
+  "dnlhc/glance.nvim",
+  cmd = "Glance",
 }
