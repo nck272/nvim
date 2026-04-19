@@ -5,6 +5,7 @@ require("config.filetypes")
 require("config.keymaps")
 require("config.options")
 require("config.terminal")
+require("config.no-italic")
 
 -- transparent background
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
