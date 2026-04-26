@@ -133,8 +133,8 @@ return {
 
       return {
         defaults = {
-          prompt_prefix = "? ",
-          selection_caret = "? ",
+          prompt_prefix = " ",
+          selection_caret = " ",
           -- open files in the first window that is an actual file.
           -- use the current window if no other window is available.
           get_selection_window = function()
