@@ -7,6 +7,9 @@ require("config.options")
 require("config.terminal")
 require("config.no-italic")
 
+local colors = require("custom.colors")
+vim.cmd(string.format("hi StatusLine guibg=%s", colors.black))
+
 -- -- transparent background
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

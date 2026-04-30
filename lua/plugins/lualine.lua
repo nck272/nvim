@@ -10,10 +10,7 @@ return {
       },
     })
 
-    if not vim.g.trouble_lualine then
-      opts.sections = opts.sections or {}
-      table.insert(opts.sections.lualine_c, { "navic", color_correction = "dynamic" })
-    end
+    table.insert(opts.sections.lualine_x, { "encoding" })
 
     return opts
   end,
