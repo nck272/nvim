@@ -7,7 +7,12 @@ require("config.options")
 require("config.terminal")
 require("config.no-italic")
 
-vim.cmd("hi clear")
-vim.cmd.colorscheme("habamax.nvim")
+local color_bg = "#111111"
+local theme = "habamax"
 
-require("config.background")("#111111")
+vim.cmd("hi clear")
+vim.cmd.colorscheme(theme)
+
+local background = require("config.background")
+background.set(color_bg)
+background.set_lualine(theme, color_bg)

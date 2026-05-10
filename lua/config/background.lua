@@ -1,5 +1,41 @@
-local set = function(color)
-  local fg = "#ffffff"
+local M = {}
+
+local fg = "#ffffff"
+
+M.set_lualine = function(theme, color)
+  local custom = require(string.format("lualine.themes.%s", theme))
+
+  local modes = {
+    "normal",
+    -- "insert",
+    -- "visual",
+    -- "replace",
+    -- "command",
+    -- "inactive"
+  }
+  local sections = {
+    -- "a",
+    "b",
+    "c",
+    "x",
+    "y",
+    -- "z",
+  }
+
+  for _, mode in ipairs(modes) do
+    for _, section in ipairs(sections) do
+      if custom[mode] and custom[mode][section] then
+        custom[mode][section].bg = color
+      end
+    end
+  end
+
+  require("lualine").setup({
+    options = { theme = custom },
+  })
+end
+
+M.set = function(color)
   vim.api.nvim_set_hl(0, "Normal", { bg = color })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = color, fg = fg })
   vim.api.nvim_set_hl(0, "FloatBorder", { bg = color, fg = fg })
@@ -55,4 +91,4 @@ local set = function(color)
   vim.api.nvim_set_hl(0, "TabLineFill", { bg = color })
 end
 
-return set
+return M
