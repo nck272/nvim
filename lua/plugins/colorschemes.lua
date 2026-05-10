@@ -5,11 +5,6 @@ return {
     priority = 1000,
   },
   {
-    "ribru17/bamboo.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
     "tjdevries/colorbuddy.nvim",
     lazy = false,
     priority = 1000,
@@ -152,5 +147,23 @@ return {
     dependencies = { "rktjmp/lush.nvim" },
     lazy = false,
     priority = 1000,
+  },
+  {
+    "wtfox/jellybeans.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "blazkowolf/gruber-darker.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "wnkz/monoglow.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
 }

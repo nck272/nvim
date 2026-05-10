@@ -8,6 +8,6 @@ require("config.terminal")
 require("config.no-italic")
 
 vim.cmd("hi clear")
-vim.cmd.colorscheme("gruvbuddy")
+vim.cmd.colorscheme("habamax.nvim")
 
 require("config.background")("#111111")
