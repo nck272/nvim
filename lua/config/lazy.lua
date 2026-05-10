@@ -77,6 +77,3 @@ require("lazy").setup({
     },
   },
 })
-
-vim.cmd("hi clear")
-vim.cmd.colorscheme("gruvbuddy")

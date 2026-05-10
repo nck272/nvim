@@ -147,4 +147,10 @@ return {
     lazy = false,
     priority = 1000,
   },
+  {
+    "ntk148v/habamax.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+    lazy = false,
+    priority = 1000,
+  },
 }

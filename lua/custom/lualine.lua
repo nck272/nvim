@@ -1,16 +1,16 @@
 local custom_theme = require("lualine.themes.auto")
-local colors = require("custom.colors")
+local colors = require("custom.colors").habamax
 
-custom_theme.normal.a.bg = colors.black_light
-custom_theme.normal.a.fg = colors.fg
-custom_theme.insert.a.bg = colors.black_light
-custom_theme.insert.a.fg = colors.fg
-custom_theme.visual.a.bg = colors.black_light
-custom_theme.visual.a.fg = colors.fg
-custom_theme.replace.a.bg = colors.black_light
-custom_theme.replace.a.fg = colors.fg
-custom_theme.command.a.bg = colors.black_light
-custom_theme.command.a.fg = colors.fg
+custom_theme.normal.a.bg = colors.purple
+custom_theme.normal.a.fg = colors.bg
+custom_theme.insert.a.bg = colors.cyan
+custom_theme.insert.a.fg = colors.bg
+custom_theme.visual.a.bg = colors.green
+custom_theme.visual.a.fg = colors.bg
+custom_theme.replace.a.bg = colors.red
+custom_theme.replace.a.fg = colors.bg
+custom_theme.command.a.bg = colors.orange
+custom_theme.command.a.fg = colors.bg
 
 custom_theme.normal.b.bg = colors.black_light
 custom_theme.normal.b.fg = colors.fg
