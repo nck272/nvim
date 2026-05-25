@@ -143,12 +143,6 @@ return {
     priority = 1000,
   },
   {
-    "ntk148v/habamax.nvim",
-    dependencies = { "rktjmp/lush.nvim" },
-    lazy = false,
-    priority = 1000,
-  },
-  {
     "wtfox/jellybeans.nvim",
     lazy = false,
     priority = 1000,
@@ -165,5 +159,30 @@ return {
     lazy = false,
     priority = 1000,
     opts = {},
+  },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "JCodV/autumn_night.nvim",
+    lazy = false,
+    priority = 1000,
+    dependencies = { "rktjmp/lush.nvim" },
+  },
+  {
+    -- fg: #d1b897
+    -- bg: #062329
+    "dgrco/deepwater.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    -- bg: #111c18
+    "st-eez/osaka-jade.nvim",
+    lazy = false,
+    priority = 1000,
   },
 }

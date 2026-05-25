@@ -1,6 +1,6 @@
 local M = {}
 
-local fg = "#ffffff"
+local fg = "#d1b897"
 
 M.set_lualine = function(theme, color)
   local custom = require(string.format("lualine.themes.%s", theme))
@@ -47,7 +47,7 @@ M.set = function(color)
   vim.api.nvim_set_hl(0, "SignColumn", { bg = color })
   vim.api.nvim_set_hl(0, "NormalNC", { bg = color })
   vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = color })
-  vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = color })
+  vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = color, fg = color })
   vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = color, fg = color })
   vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = color })
   vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = color, fg = color })

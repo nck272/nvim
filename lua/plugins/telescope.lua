@@ -38,6 +38,9 @@ return {
       { "<leader><space>", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
       -- find
       { "<leader>fd", LazyVim.pick("files"), desc = "Find Files (Root Dir)" },
+      { "<leader>fD", LazyVim.pick("files", { root = false }), desc = "Find Files (Root Dir)" },
+      { "<leader>fg", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
+      { "<leader>fG", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
       {
         "<leader>fb",
         "<cmd>Telescope buffers sort_mru=true sort_lastused=true ignore_current_buffer=true<cr>",
@@ -64,8 +67,6 @@ return {
       { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
       { "<leader>sd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
       { "<leader>sD", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
-      { "<leader>sg", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
-      { "<leader>sG", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
       { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
       { "<leader>sj", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
