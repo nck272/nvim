@@ -1,7 +1,29 @@
 local M = {}
 
-local fg = "#d1b897"
+local fg = "#FFFFFF"
 
+M.set_buffer_line = function()
+  local function set()
+    for name, _ in pairs(vim.api.nvim_get_hl(0, {})) do
+      if name:match("^BufferLine") then
+        local hl = vim.api.nvim_get_hl(0, { name = name })
+        local cur_bg = name:match("Selected$") and "#272727" or "#181818"
+        local cur_fg = name:match("Selected$") and "#FFFFFF" or "#E0E0E0"
+
+        vim.api.nvim_set_hl(0, name, {
+          fg = name:match("^BufferLineDevIcon") and hl.fg or cur_fg,
+          bg = cur_bg,
+          bold = hl.bold,
+        })
+      end
+    end
+  end
+  vim.api.nvim_create_autocmd({ "ColorScheme", "BufEnter", "BufAdd", "BufWinEnter" }, {
+    callback = function()
+      vim.schedule(set)
+    end,
+  })
+end
 M.set_lualine = function(theme, color)
   local custom = require(string.format("lualine.themes.%s", theme))
 
@@ -26,6 +48,7 @@ M.set_lualine = function(theme, color)
     for _, section in ipairs(sections) do
       if custom[mode] and custom[mode][section] then
         custom[mode][section].bg = color
+        custom[mode][section].fg = fg
       end
     end
   end
