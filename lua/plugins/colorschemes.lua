@@ -110,6 +110,7 @@ return {
   },
   {
     "navarasu/onedark.nvim",
+    version = "v0.1.0",
     lazy = false,
     priority = 1000,
     config = function()

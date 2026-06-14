@@ -1,13 +1,11 @@
 local M = {}
 
-local fg = "#FFFFFF"
-
 M.set_buffer_line = function()
   local function set()
     for name, _ in pairs(vim.api.nvim_get_hl(0, {})) do
       if name:match("^BufferLine") then
         local hl = vim.api.nvim_get_hl(0, { name = name })
-        local cur_bg = name:match("Selected$") and "#272727" or "#181818"
+        local cur_bg = name:match("Selected$") and "#111111" or "#272727"
         local cur_fg = name:match("Selected$") and "#FFFFFF" or "#E0E0E0"
 
         vim.api.nvim_set_hl(0, name, {
@@ -24,7 +22,7 @@ M.set_buffer_line = function()
     end,
   })
 end
-M.set_lualine = function(theme, color)
+M.set_lualine = function(theme, bg, fg)
   local custom = require(string.format("lualine.themes.%s", theme))
 
   local modes = {
@@ -47,7 +45,7 @@ M.set_lualine = function(theme, color)
   for _, mode in ipairs(modes) do
     for _, section in ipairs(sections) do
       if custom[mode] and custom[mode][section] then
-        custom[mode][section].bg = color
+        custom[mode][section].bg = bg
         custom[mode][section].fg = fg
       end
     end
@@ -58,60 +56,62 @@ M.set_lualine = function(theme, color)
   })
 end
 
-M.set = function(color)
-  vim.api.nvim_set_hl(0, "Normal", { bg = color })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = color, fg = fg })
-  vim.api.nvim_set_hl(0, "FloatBorder", { bg = color, fg = fg })
-  vim.api.nvim_set_hl(0, "Pmenu", { bg = color })
-  vim.api.nvim_set_hl(0, "Terminal", { bg = color })
-  vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = color })
-  vim.api.nvim_set_hl(0, "FoldColumn", { bg = color })
-  vim.api.nvim_set_hl(0, "Folded", { bg = color })
-  vim.api.nvim_set_hl(0, "SignColumn", { bg = color })
-  vim.api.nvim_set_hl(0, "NormalNC", { bg = color })
-  vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = color })
-  vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = color, fg = color })
-  vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = color, fg = color })
-  vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = color })
-  vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = color, fg = color })
-  vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = color, fg = color })
-  vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = color, fg = color })
+M.set = function(bg, fg)
+  vim.api.nvim_set_hl(0, "Normal", { bg = bg })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = bg, fg = fg })
+  vim.api.nvim_set_hl(0, "FloatBorder", { bg = bg, fg = fg })
+  vim.api.nvim_set_hl(0, "Pmenu", { bg = bg })
+  vim.api.nvim_set_hl(0, "Terminal", { bg = bg })
+  vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = bg })
+  vim.api.nvim_set_hl(0, "FoldColumn", { bg = bg })
+  vim.api.nvim_set_hl(0, "Folded", { bg = bg })
+  vim.api.nvim_set_hl(0, "SignColumn", { bg = bg })
+  vim.api.nvim_set_hl(0, "NormalNC", { bg = bg })
+  vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = bg })
+  vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = bg, fg = bg })
+  vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = bg, fg = bg })
+  vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = bg })
+  vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = bg, fg = bg })
+  vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = bg, fg = bg })
+  vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = bg, fg = bg })
 
-  vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = color })
-  vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = color })
-  vim.api.nvim_set_hl(0, "NeoTreeVertSplit", { bg = color })
-  vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { bg = color })
-  vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = color })
+  vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = bg })
+  vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = bg })
+  vim.api.nvim_set_hl(0, "NeoTreeVertSplit", { bg = bg })
+  vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { bg = bg })
+  vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = bg })
 
-  vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = color })
-  vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { bg = color })
-  vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = color })
+  vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = bg })
+  vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { bg = bg })
+  vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = bg })
 
-  vim.api.nvim_set_hl(0, "NotifyINFOBody", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyERRORBody", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyWARNBody", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyINFOTitle", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyERRORTitle", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyWARNTitle", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyTRACETitle", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyINFOBorder", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyERRORBorder", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyWARNBorder", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { bg = color })
-  vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { bg = color })
+  vim.api.nvim_set_hl(0, "NotifyINFOBody", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyERRORBody", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyWARNBody", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyINFOTitle", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyERRORTitle", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyWARNTitle", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyTRACETitle", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyINFOBorder", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyERRORBorder", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyWARNBorder", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { bg = bg })
+  vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { bg = bg })
 
-  vim.api.nvim_set_hl(0, "LineNr", { bg = color })
-  vim.api.nvim_set_hl(0, "CursorLineNr", { bg = color })
+  vim.api.nvim_set_hl(0, "LineNr", { bg = bg })
+  vim.api.nvim_set_hl(0, "CursorLineNr", { bg = bg })
 
-  vim.api.nvim_set_hl(0, "StatusLine", { bg = color })
-  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = color })
+  vim.api.nvim_set_hl(0, "StatusLine", { bg = bg })
+  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = bg })
 
-  vim.api.nvim_set_hl(0, "TabLine", { bg = color, fg = "#6c6c6c" })
-  vim.api.nvim_set_hl(0, "TabLineSel", { bg = color, fg = fg })
-  vim.api.nvim_set_hl(0, "TabLineFill", { bg = color })
+  vim.api.nvim_set_hl(0, "TabLine", { bg = bg, fg = "#6c6c6c" })
+  vim.api.nvim_set_hl(0, "TabLineSel", { bg = bg, fg = fg })
+  vim.api.nvim_set_hl(0, "TabLineFill", { bg = bg })
+
+  vim.api.nvim_set_hl(0, "LspInlayHint", { fg = "#808080", bg = "#2D2D2D" })
 end
 
 return M
