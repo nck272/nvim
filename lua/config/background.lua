@@ -1,12 +1,12 @@
 local M = {}
 
-M.set_buffer_line = function()
+M.set_buffer_line = function(bg, fg)
   local function set()
     for name, _ in pairs(vim.api.nvim_get_hl(0, {})) do
       if name:match("^BufferLine") then
         local hl = vim.api.nvim_get_hl(0, { name = name })
-        local cur_bg = name:match("Selected$") and "#111111" or "#272727"
-        local cur_fg = name:match("Selected$") and "#FFFFFF" or "#E0E0E0"
+        local cur_bg = name:match("Selected$") and bg or "#272727"
+        local cur_fg = name:match("Selected$") and fg or "#E0E0E0"
 
         vim.api.nvim_set_hl(0, name, {
           fg = name:match("^BufferLineDevIcon") and hl.fg or cur_fg,
@@ -22,16 +22,17 @@ M.set_buffer_line = function()
     end,
   })
 end
+
 M.set_lualine = function(theme, bg, fg)
   local custom = require(string.format("lualine.themes.%s", theme))
 
   local modes = {
     "normal",
-    -- "insert",
-    -- "visual",
-    -- "replace",
-    -- "command",
-    -- "inactive"
+    "insert",
+    "visual",
+    "replace",
+    "command",
+    "inactive",
   }
   local sections = {
     -- "a",
@@ -48,6 +49,13 @@ M.set_lualine = function(theme, bg, fg)
         custom[mode][section].bg = bg
         custom[mode][section].fg = fg
       end
+    end
+  end
+
+  custom["normal"]["a"].bg = "#FFFFFF"
+  for _, mode in ipairs(modes) do
+    if custom[mode] and custom[mode]["a"] then
+      custom[mode]["a"].fg = "#000000"
     end
   end
 

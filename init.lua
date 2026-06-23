@@ -8,21 +8,27 @@ require("config.terminal")
 require("config.no-italic")
 
 local bg = "#111111"
-local fg = "#ffffff"
+local fg = "#FFFFFF"
 
 local function apply_overrides()
-  vim.api.nvim_set_hl(0, "string", { fg = "#00ff00", ctermfg = 10 })
-  vim.api.nvim_set_hl(0, "Visual", { bg = "#2c3e50", fg = "#ffffff", ctermbg = 24, ctermfg = 15 })
+  vim.api.nvim_set_hl(0, "Keyword", { fg = "#F05E48" })
+  vim.api.nvim_set_hl(0, "Function", { fg = "#FFFFFF" })
+
+  vim.api.nvim_set_hl(0, "@field", { fg = "#FFFFFF" })
+  vim.api.nvim_set_hl(0, "@property", { fg = "#FFFFFF" })
+  vim.api.nvim_set_hl(0, "@parameter", { fg = "#FFFFFF" })
 
   local background = require("config.background")
   background.set(bg, fg)
   background.set_lualine("auto", bg, fg)
-  background.set_buffer_line()
+  background.set_buffer_line(bg, fg)
 end
 
-vim.api.nvim_create_autocmd("colorscheme", { pattern = "blue", callback = apply_overrides })
+local colorscheme = "naysayer"
+
+vim.api.nvim_create_autocmd("colorscheme", { pattern = colorsheme, callback = apply_overrides })
 
 vim.cmd("hi clear")
-vim.cmd("colorscheme blue")
+vim.cmd.colorscheme(colorscheme)
 
 apply_overrides()
