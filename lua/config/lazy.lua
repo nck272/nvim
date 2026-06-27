@@ -45,6 +45,11 @@ require("lazy").setup({
         dashboard = { enabled = false },
       },
     },
+    {
+      "nvim-mini/mini.pairs",
+      lazy = false,
+      enabled = false,
+    },
     { import = "plugins" },
   },
   defaults = {
