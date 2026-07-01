@@ -11,7 +11,7 @@ local colors = {
   black = "#000000",
 
   fg = "#FFFFFF",
-  bg = "#000000",
+  bg = "#181818",
   gutter = "#111111",
   selection = "#0000ff",
   text = "#d0b892",
