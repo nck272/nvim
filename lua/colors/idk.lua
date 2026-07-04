@@ -22,13 +22,15 @@ local colors = {
   function_ = "#d0b892",
   struct = "#F05E48",
   string = "#3ad0b5",
-  constant = "#87ffde",
+  constant = "#FD971F",
   macro = "#8cde94",
   number = "#87ffde",
   error = "#ff0000",
   warning = "#ffaa00",
   highlight = "#0b3335",
   line_fg = "#126367",
+  property = "#d0b892",
+  type = "#87ffde",
 
   dimmed_keyword = "#b0b0b0",
   dimmed_function = "#cccccc",
@@ -64,11 +66,12 @@ set(0, "Identifier", { fg = colors.white })
 set(0, "Function", { fg = colors.function_ })
 set(0, "Statement", { fg = colors.keyword })
 set(0, "Keyword", { fg = colors.keyword })
-set(0, "Type", { fg = colors.punctuation })
+set(0, "Type", { fg = colors.type })
 set(0, "PreProc", { fg = colors.macro })
-set(0, "Special", { fg = colors.orange })
+set(0, "Special", { fg = colors.constant })
 set(0, "WarningMsg", { fg = colors.warning })
 set(0, "Error", { fg = colors.error })
+set(0, "Operator", { fg = colors.constant })
 
 -- Diagnostics
 set(0, "DiagnosticError", { fg = colors.red })
@@ -102,28 +105,28 @@ set(0, "@keyword.function", { link = "Keyword" })
 set(0, "@field", { link = "Identifier" })
 set(0, "@property", { link = "Identifier" })
 set(0, "@parameter", { link = "Identifier" })
-set(0, "@field", { link = "Normal" })
-set(0, "@property", { link = "Normal" })
-set(0, "@parameter", { link = "Normal" })
 
 -- LSP
-set(0, "@lsp.type", { fg = colors.constant })
-set(0, "@lsp.type.type", { fg = colors.constant })
+set(0, "@lsp.type", { link = "Type" })
+set(0, "@lsp.type.type", { link = "Type" })
 set(0, "@lsp.type.variable", { fg = colors.white })
 set(0, "@lsp.type.struct", { link = "Keyword" })
 set(0, "@lsp.type.namespace", { link = "Keyword" })
-set(0, "@lsp.type.method", { fg = colors.text })
-set(0, "@lsp.type.property", { fg = colors.text })
+set(0, "@lsp.type.method", { link = "Function" })
+set(0, "@lsp.type.property", { fg = colors.property })
 set(0, "@lsp.type.builtin", { link = "Keyword" })
-set(0, "@lsp.type.operator", { fg = colors.cyan })
+set(0, "@lsp.type.operator", { link = "Constant" })
+set(0, "@lsp.type.key", { fg = colors.white })
+set(0, "@lsp.type.table", { link = "Keyword" })
+set(0, "@lsp.type.enum", { link = "Keyword" })
+set(0, "@lsp.type.enumMember", { link = "Type" })
 set(0, "@lsp.typemod.selfKeyword", { fg = colors.white })
 set(0, "@lsp.typemod.interface", { fg = colors.struct })
-set(0, "@lsp.typemod.function", { fg = colors.text })
+set(0, "@lsp.typemod.function", { link = "Function" })
 set(0, "@lsp.typemod.function.declaration", { link = "Function" })
 set(0, "@lsp.typemod.operator.controlFlow", { link = "Keyword" })
 set(0, "@lsp.typemod.variable", { fg = colors.white })
--- set(0, "@lsp.typemod.method", { fg = colors.text })
--- set(0, "@lsp.typemod.variable", { fg = colors.white })
+set(0, "@lsp.typemod.variable.static", { link = "Constant" })
 
 set(0, "NormalNC", { bg = colors.bg })
 set(0, "NormalFloat", { bg = colors.bg, fg = colors.fg })
