@@ -5,7 +5,7 @@ require("config.filetypes")
 require("config.keymaps")
 require("config.options")
 require("config.terminal")
--- require("config.no-italic")
+require("config.no-italic")
 
 vim.cmd("hi clear")
 vim.cmd.colorscheme("idk")
