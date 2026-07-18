@@ -10,5 +10,12 @@ local run_file = function()
 end
 
 vim.keymap.set("n", ",,x", function()
-  require("toggleterm").send_command(run_file())
+  vim.cmd.new()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 30)
+  vim.wo.winfixheight = true
+  vim.cmd.term()
+
+  local job_id = vim.bo.channel
+  vim.fn.chansend(job_id, "zig build run\r")
 end, { desc = "Execute the current file" })
