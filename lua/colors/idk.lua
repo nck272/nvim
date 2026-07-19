@@ -30,7 +30,7 @@ local colors = {
   warning = "#ffaa00",
   highlight = "#0b3335",
   line_fg = "#126367",
-  property = "#d0b892",
+  property = "#81a2be",
   type = "#8cde94",
   operator = "#fc9487",
 
