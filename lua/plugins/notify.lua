@@ -3,6 +3,7 @@ return {
     "rcarriga/nvim-notify",
     config = function()
       vim.notify = require("notify").setup({
+        border = "single",
         background_colour = "#000000",
         on_open = function(win)
           local buf = vim.api.nvim_win_get_buf(win)

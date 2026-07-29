@@ -63,7 +63,7 @@ M.setup = function(opts)
     })
   end
 
-  vim.diagnostic.config({ virtual_text = false, signs = false, virtual_lines = false, underline = false })
+  vim.diagnostic.config({ virtual_text = true, signs = true, virtual_lines = false, underline = true })
 end
 
 M.keys = {
