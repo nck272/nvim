@@ -36,20 +36,20 @@ return {
           end,
         },
         confirmation = {
-          border = "rounded", -- Options: "single", "double", "shadow", "rounded"
+          border = "single", -- Options: "single", "double", "shadow", "singled"
           window_conf = {
             winblend = 0,
           },
         },
 
         progress = {
-          border = "rounded",
+          border = "single",
           winblend = 0,
         },
 
         float = {
           padding = 2,
-          border = "rounded",
+          border = "single",
           win_options = {
             winblend = 0,
           },

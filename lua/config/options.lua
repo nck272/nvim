@@ -7,7 +7,7 @@ opt.ignorecase = true
 
 opt.number = true
 opt.relativenumber = true
-opt.cursorline = false
+opt.cursorline = true
 
 opt.splitbelow = true
 opt.splitright = true
@@ -30,7 +30,6 @@ opt.softtabstop = 4
 
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.cursorline = false
 
 opt.more = false
 
@@ -57,6 +56,7 @@ opt.showcmd = true
 
 opt.clipboard = "unnamedplus"
 opt.winbar = "%f"
+opt.winborder = "single"
 
 vim.api.nvim_create_user_command("Unique", function()
   local start_line = vim.fn.getpos("'<")[2]

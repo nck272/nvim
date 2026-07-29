@@ -21,7 +21,7 @@ local colors = {
   static = "#F05E48",
   keyword = "#F05E48",
   variable = "#E0E0E0",
-  function_ = "#d0b892",
+  function_ = "#F9FF54",
   string = "#3ad0b5",
   constant = "#FD971F",
   macro = "#FD971F",
@@ -52,7 +52,7 @@ set(0, "Normal", { fg = colors.fg, bg = colors.bg })
 set(0, "Cursor", { bg = colors.white })
 set(0, "Visual", { bg = colors.selection })
 set(0, "LineNr", { fg = colors.fg, bg = colors.bg })
-set(0, "CursorLineNr", { fg = colors.fg, bg = colors.bg })
+set(0, "CursorLineNr", { fg = colors.orange, bg = colors.bg, bold = true })
 set(0, "CursorLine", { bg = colors.highlight })
 set(0, "ColorColumn", { bg = colors.highlight })
 set(0, "VertSplit", { fg = colors.line_fg })
