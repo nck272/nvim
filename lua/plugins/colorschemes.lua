@@ -15,43 +15,7 @@ return {
     priority = 1000,
   },
   {
-    "bjarneo/hackerman.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "sainnhe/everforest",
-    lazy = false,
-    priority = 1000,
-  },
-  {
     "ellisonleao/gruvbox.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "tahayvr/matteblack.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "loctvl842/monokai-pro.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "shaunsingh/nord.nvim",
     lazy = false,
     priority = 1000,
   },
@@ -72,12 +36,6 @@ return {
     name = "github-theme",
     lazy = false,
     priority = 1000,
-  },
-  {
-    "blazkowolf/gruber-darker.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
   },
   {
     "JCodV/autumn_night.nvim",
