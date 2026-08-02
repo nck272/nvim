@@ -2,12 +2,12 @@ local colors = {
   yellow = "#F9FF54",
   orange = "#FD971F",
   red = "#F05E48",
-  magenta = "#FD5FF0",
-  blue = "#66D9EF",
+  magenta = "#E080E0",
+  blue = "#80B0F0",
   lteal = "#7AD0C6",
   green = "#53d549",
   cyan = "#A1EFE4",
-  violet = "#AE81FF",
+  violet = "#C060C0",
   white = "#E0E0E0",
   black = "#000000",
 
@@ -84,7 +84,7 @@ set(0, "Static", { fg = colors.static })
 -- Diagnostics
 set(0, "DiagnosticError", { fg = colors.red })
 set(0, "DiagnosticWarn", { fg = colors.warning })
-set(0, "DiagnosticInfo", { fg = colors.blue })
+set(0, "DiagnosticInfo", { fg = colors.comment })
 set(0, "DiagnosticHint", { fg = colors.cyan })
 
 -- Rainbow delimiters (optional)
