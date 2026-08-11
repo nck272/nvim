@@ -11,18 +11,18 @@ local colors = {
   white = "#FFFFFF",
   black = "#000000",
 
-  fg = "#bcbcbc",
+  fg = "#FFFFFF",
   bg = "#111111",
   gutter = "#111111",
   selection = "#0000ff",
-  text = "#bcbcbc",
+  text = "#FFFFFF",
   comment = "#53d549",
-  punctuation = "#ffa500",
+  punctuation = "#FFFFFF",
   static = "#F05E48",
   keyword = "#F05E48",
-  variable = "#bcbcbc",
+  variable = "#FFFFFF",
   function_ = "#d0b892",
-  string = "#55FFFF",
+  string = "#3ad0b5",
   constant = "#ffa500",
   macro = "#ffa500",
   number = "#87ffde",
@@ -253,7 +253,7 @@ for _, mode in ipairs(modes) do
   end
 end
 
-custom["normal"]["a"].bg = "#AAAAAA"
+custom["normal"]["a"].bg = "#FFFFFF"
 for _, mode in ipairs(modes) do
   if custom[mode] and custom[mode]["a"] then
     custom[mode]["a"].fg = "#000000"
