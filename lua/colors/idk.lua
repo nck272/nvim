@@ -32,7 +32,7 @@ local colors = {
   line_fg = "#126367",
   property = "#d0b892",
   type = "#8cde94",
-  operator = "#fc9487",
+  operator = "#FFFFFF",
 
   dimmed_keyword = "#b0b0b0",
   dimmed_function = "#cccccc",
