@@ -2,7 +2,7 @@ return {
   {
     "rcarriga/nvim-notify",
     config = function()
-      vim.notify = require("notify").setup({
+      require("notify").setup({
         border = "single",
         background_colour = "#000000",
         on_open = function(win)
@@ -16,6 +16,7 @@ return {
           end
         end,
       })
+      vim.notify = require("notify")
     end,
   },
 }

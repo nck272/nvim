@@ -37,7 +37,7 @@ return {
       -- JDK installation
       jdk = {
         auto_install = true,
-        version = "17",
+        -- version = "25",
       },
 
       -- Logging
@@ -51,20 +51,5 @@ return {
       },
     })
     vim.lsp.enable("jdtls")
-    vim.lsp.config("jdtls", {
-      settings = {
-        java = {
-          configuration = {
-            runtimes = {
-              {
-                name = "JavaSE-21",
-                path = "/opt/jdk-21",
-                default = true,
-              },
-            },
-          },
-        },
-      },
-    })
   end,
 }
