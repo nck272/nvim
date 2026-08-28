@@ -25,7 +25,7 @@ Color.new("string", "#3ad0b5")
 Color.new("selection", "#0000ff")
 Color.new("line_fg", "#126367")
 
-local background_string = "#1A1A1A"
+local background_string = "#111111"
 Color.new("background", background_string)
 Color.new("gray0", background_string)
 
