@@ -4,6 +4,7 @@ require("config.clipboard")
 require("config.filetypes")
 require("config.keymaps")
 require("config.options")
+require("config.shell")
 require("config.terminal")
 require("config.no-italic")
 
