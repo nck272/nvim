@@ -7,6 +7,7 @@ local c = colorbuddy.colors
 local g = colorbuddy.groups
 local s = colorbuddy.styles
 
+Color.new("superwhite", "#FFFFFF")
 Color.new("white", "#d0b892")
 Color.new("red", "#F05E48")
 Color.new("pink", "#FFFF55")
@@ -16,12 +17,12 @@ Color.new("blue", "#81a2be")
 Color.new("aqua", "#87ffde")
 Color.new("cyan", "#55FFFF")
 Color.new("purple", "#ffa500")
-Color.new("violet", "#ffa500")
+Color.new("violet", "#8cde94")
 Color.new("orange", "#ffa500")
 Color.new("brown", "#d0b892")
 
 Color.new("seagreen", "#8cde94")
--- Color.new("string", "#3ad0b5")
+Color.new("string", "#3ad0b5")
 Color.new("selection", "#0000ff")
 Color.new("line_fg", "#126367")
 
@@ -36,7 +37,7 @@ Group.new("Number", c.aqua, nil)
 Group.new("MatchParen", nil, c.selection)
 Group.new("Pmenu", nil, c.background)
 Group.new("PmenuSel", nil, c.selection)
-Group.new("Search", c.orange, c.selection)
+Group.new("Search", c.superwhite, c.selection)
 
 Group.new("StatusLine", nil, c.background)
 Group.new("StatusLineNC", nil, c.background)
@@ -49,14 +50,17 @@ Group.new("@function.bracket", g.Normal, g.Normal)
 Group.new("@keyword", c.red, nil, s.none)
 -- Group.new("@keyword.faded", g.nontext.fg:light(), nil, s.none)
 Group.new("@number", c.aqua, nil, s.none)
-Group.new("@module", c.orange, nil, s.none)
-Group.new("@string", c.cyan, nil, s.none)
+Group.new("@module", c.seagreen, nil, s.none)
+Group.new("@string", c.string, nil, s.none)
 Group.new("@property", c.white)
 Group.new("@variable", c.superwhite, nil)
 Group.new("@variable.builtin", c.orange, g.Normal)
+Group.new("@type", c.seagreen, g.Normal)
 
-Group.new("@lsp.type.enumMember", c.aqua, g.Normal)
 Group.new("@lsp.type.builtin", c.red, g.Normal)
+Group.new("@lsp.type.enumMember", c.aqua, g.Normal)
+Group.new("@lsp.type.namespace", c.seagreen, g.Normal)
+Group.new("@lsp.type.type", c.seagreene, g.Normal)
 
 -- Lualine
 local custom = require("lualine.themes.auto")
