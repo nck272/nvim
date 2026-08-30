@@ -7,7 +7,6 @@ local c = colorbuddy.colors
 local g = colorbuddy.groups
 local s = colorbuddy.styles
 
-Color.new("superwhite", "#FFFFFF")
 Color.new("white", "#d0b892")
 Color.new("red", "#F05E48")
 Color.new("pink", "#E6DB74")
