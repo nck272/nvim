@@ -25,7 +25,7 @@ Color.new("dark_blue", "#3ad0b5")
 Color.new("selection", "#0000ff")
 Color.new("line_fg", "#132c29")
 
-local background_string = "#111111"
+local background_string = "#061311"
 Color.new("background", background_string)
 Color.new("gray0", background_string)
 
@@ -37,6 +37,7 @@ Group.new("MatchParen", nil, c.selection)
 Group.new("Pmenu", nil, c.background)
 Group.new("PmenuSel", nil, c.selection)
 Group.new("Search", c.superwhite, c.line_fg)
+Group.new("CursorLineNr", c.mint, c.background)
 
 Group.new("StatusLine", nil, c.background)
 Group.new("StatusLineNC", nil, c.background)
