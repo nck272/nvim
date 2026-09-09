@@ -9,4 +9,4 @@ require("config.terminal")
 require("config.no-italic")
 
 vim.cmd("hi clear")
-vim.cmd.colorscheme("idk")
+vim.cmd.colorscheme("kintsugi-flared")

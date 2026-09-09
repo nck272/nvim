@@ -49,8 +49,17 @@ return {
     priority = 1000,
   },
   {
-    "rebelot/kanagawa.nvim",
+    "metalelf0/kintsugi-nvim",
     lazy = false,
     priority = 1000,
+    config = function()
+      require("kintsugi").setup({
+        variant = "dark", -- "dark" | "flared"
+        transparent = false,
+        terminal_colors = true,
+        bold_keywords = true,
+        italic_comments = false,
+      })
+    end,
   },
 }
