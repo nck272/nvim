@@ -60,6 +60,10 @@ Group.new("@variable", c.superwhite, nil)
 Group.new("@variable.builtin", c.orange, g.Normal)
 Group.new("@type", c.violet, g.Normal)
 
+Group.new("@tag.tsx", c.pink, g.Normal)
+Group.new("@tag.delimiter.tsx", c.blue, g.Normal)
+Group.new("@variable.member.tsx", c.white, g.Normal)
+
 Group.new("@lsp.type.builtin", c.pink, g.Normal)
 Group.new("@lsp.type.enumMember", c.aqua, g.Normal)
 Group.new("@lsp.type.namespace", c.mint, g.Normal)

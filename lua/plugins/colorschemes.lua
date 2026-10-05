@@ -20,6 +20,11 @@ return {
     priority = 1000,
   },
   {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "rose-pine/neovim",
     name = "rose-pine",
     lazy = false,
@@ -30,6 +35,11 @@ return {
     version = "v0.1.0",
     lazy = false,
     priority = 1000,
+    config = function()
+      require("onedark").setup({
+        style = "warmer",
+      })
+    end,
   },
   {
     "projekt0n/github-nvim-theme",

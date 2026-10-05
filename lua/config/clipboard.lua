@@ -2,12 +2,12 @@ local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
 
-if vim.env.SSH_CONNECTION then
-  local function vim_paste()
-    local content = vim.fn.getreg('"')
-    return vim.split(content, "\n")
-  end
+local function vim_paste()
+  local content = vim.fn.getreg('"')
+  return vim.split(content, "\n")
+end
 
+if vim.env.SSH_CONNECTION then
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {
@@ -28,8 +28,11 @@ vim.g.clipboard = {
     ["*"] = "clip.exe",
   },
   paste = {
-    ["+"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    ["*"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ["+"] = vim_paste,
+    ["*"] = vim_paste,
+    -- Below is slow for ArchLinux
+    -- ["+"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    -- ["*"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
   },
   cache_enabled = 0,
 }
