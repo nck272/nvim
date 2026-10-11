@@ -65,7 +65,7 @@ return {
     config = function()
       require("kintsugi").setup({
         variant = "dark", -- "dark" | "flared"
-        transparent = false,
+        transparent = true,
         terminal_colors = true,
         bold_keywords = true,
         italic_comments = false,

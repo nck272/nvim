@@ -7,6 +7,7 @@ require("config.options")
 require("config.shell")
 require("config.terminal")
 require("config.no-italic")
+-- require("config.background").set(none, "#FFFFFF") -- transparent
 
 vim.cmd("hi clear")
-vim.cmd.colorscheme("idk")
+vim.cmd.colorscheme("sols")

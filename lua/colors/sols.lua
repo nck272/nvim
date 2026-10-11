@@ -11,7 +11,7 @@ Color.new("white", "#d0b892")
 Color.new("red", "#F05E48")
 Color.new("pink", "#E6DB74")
 Color.new("green", "#53d549")
-Color.new("yellow", "#d0b892")
+Color.new("yellow", "#E6DB74")
 Color.new("blue", "#72D0C5")
 Color.new("aqua", "#87ffde")
 Color.new("cyan", "#55FFFF")
@@ -25,7 +25,8 @@ Color.new("dark_blue", "#3ad0b5")
 Color.new("selection", "#0000ff")
 Color.new("line_fg", "#132c29")
 
-local background_string = "#061311"
+-- local background_string = "#061311"
+local background_string = "#111111"
 Color.new("background", background_string)
 Color.new("gray0", background_string)
 
@@ -37,7 +38,7 @@ Group.new("MatchParen", nil, c.selection)
 Group.new("Pmenu", nil, c.background)
 Group.new("PmenuSel", nil, c.selection)
 Group.new("Search", c.superwhite, c.line_fg)
-Group.new("Operator", c.orange, c.gray0)
+-- Group.new("Operator", c.orange, c.gray0)
 Group.new("Boolean", c.aqua, c.gray0)
 Group.new("CursorLineNr", c.mint, c.background)
 
@@ -59,6 +60,8 @@ Group.new("@property", c.white)
 Group.new("@variable", c.superwhite, nil)
 Group.new("@variable.builtin", c.orange, g.Normal)
 Group.new("@type", c.violet, g.Normal)
+
+Group.new("@character.rust", c.aqua, g.Normal)
 
 Group.new("@tag.tsx", c.pink, g.Normal)
 Group.new("@tag.delimiter.tsx", c.blue, g.Normal)
