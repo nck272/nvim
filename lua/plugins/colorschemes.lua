@@ -72,4 +72,9 @@ return {
       })
     end,
   },
+  {
+    "daaanny90/interlinked.nvim",
+    lazy = false,
+    priority = 1000,
+  },
 }

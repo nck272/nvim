@@ -40,6 +40,7 @@ Group.new("PmenuSel", nil, c.selection)
 Group.new("Search", c.superwhite, c.line_fg)
 -- Group.new("Operator", c.orange, c.gray0)
 Group.new("Boolean", c.aqua, c.gray0)
+Group.new("Title", c.red, c.gray0)
 Group.new("CursorLineNr", c.mint, c.background)
 
 Group.new("StatusLine", nil, c.background)
