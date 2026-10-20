@@ -38,6 +38,7 @@ return {
     config = function()
       require("onedark").setup({
         style = "warmer",
+        transparent = true,
       })
     end,
   },
@@ -73,8 +74,12 @@ return {
     end,
   },
   {
-    "daaanny90/interlinked.nvim",
+    "OldJobobo/retro-82.nvim",
     lazy = false,
     priority = 1000,
+    opts = {
+      transparent = true,
+      terminal_colors = true,
+    },
   },
 }

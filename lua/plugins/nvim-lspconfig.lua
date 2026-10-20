@@ -36,8 +36,57 @@ return {
             },
             keys = lsp.keys,
           },
+          bashls = {},
+          biome = {},
+          cssls = {},
+          eslint = {
+            autostart = false,
+            cmd = { "vscode-eslint-language-server", "--stdio", "--max-old-space-size=12288" },
+            settings = { format = false },
+          },
           lua_ls = {
-            cmd = { "lua-language-server" },
+            settings = {
+              Lua = {
+                runtime = { version = "LuaJIT" },
+                workspace = {
+                  checkThirdParty = false,
+                },
+                telemetry = { enabled = false },
+              },
+            },
+          },
+          html = {},
+          jsonls = {},
+          oxlint = {
+            root_markers = { ".oxlintrc.json" },
+          },
+          ocamllsp = {
+            manual_install = true,
+            cmd = { "dune", "exec", "ocamllsp" },
+            settings = {
+              codelens = { enable = true },
+              inlayHints = { enable = true },
+              syntaxDocumentation = { enable = true },
+            },
+          },
+          sqls = {},
+          tailwindcss = {
+            filetypes = { "typescriptreact", "javascriptreact", "html", "svelte", "astro" },
+          },
+          zls = {
+            settings = {
+              zls = {
+                enable_build_on_save = true,
+                build_on_save_step = "check",
+              },
+            },
+          },
+          rust_analyzer = {
+            settings = {
+              ["rust-analyzer"] = {
+                check = { command = "clippy", features = "all" },
+              },
+            },
           },
           clangd = {
             filetypes = { "c" },

@@ -1511,3 +1511,4 @@ highlight! link vim9MethodNameError vimFunctionError
 highlight! link vim9Public vimCommand
 highlight! link vim9Static vimCommand
 highlight! link vim9Vim9Script vimCommand
+
