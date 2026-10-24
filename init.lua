@@ -9,6 +9,6 @@ require("config.terminal")
 require("config.no-italic")
 
 vim.cmd("hi clear")
-vim.cmd.colorscheme("retro-82")
+vim.cmd.colorscheme("onedark")
 
 -- require("config.background").set("#111111", "#FFFFFF") -- transparent

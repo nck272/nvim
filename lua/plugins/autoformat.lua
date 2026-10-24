@@ -41,6 +41,7 @@ return {
         html = { "prettierd" },
         json = { "prettierd" },
         ocaml = { "ocamlformat" },
+        menhir = { "menhirformat" },
         react = { "prettier" },
         python = { "black" },
         javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -55,6 +56,11 @@ return {
         lsp_format = "fallback",
       },
       formatters = {
+        menhirformat = {
+          command = "menhirformat",
+          args = { "$FILENAME" },
+          stdin = true,
+        },
         injected = {
           options = {
             ignore_errors = true,

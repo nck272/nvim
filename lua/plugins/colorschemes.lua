@@ -3,6 +3,9 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
+    opts = {
+      transparent = true,
+    },
   },
   {
     "tjdevries/colorbuddy.nvim",
@@ -78,7 +81,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = false,
+      transparent = true,
       terminal_colors = true,
     },
   },
