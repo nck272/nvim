@@ -40,7 +40,8 @@ return {
         css = { "prettierd" },
         html = { "prettierd" },
         json = { "prettierd" },
-        ocaml = { "ocamlformat" },
+        ocaml = { "ml-format" },
+        ocamllex = { "ml-format" },
         menhir = { "menhirformat" },
         react = { "prettier" },
         python = { "black" },
@@ -56,9 +57,22 @@ return {
         lsp_format = "fallback",
       },
       formatters = {
+        ["ml-format"] = {
+          command = "ocamlformat",
+          args = {
+            "--enable-outside-detected-project",
+            "--name",
+            "$FILENAME",
+            "--impl",
+            "-",
+          },
+        },
         menhirformat = {
-          command = "menhirformat",
-          args = { "$FILENAME" },
+          command = "sh",
+          args = {
+            "-c",
+            'tmp=$(mktemp --suffix=.mly) && cat > "$tmp" && menhirformat "$tmp" && rm -f "$tmp"',
+          },
           stdin = true,
         },
         injected = {

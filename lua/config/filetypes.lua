@@ -2,7 +2,7 @@ vim.filetype.add({
   extension = {
     h = "c",
     scheme = "scheme",
-    mll = "ocaml.ocamllex",
+    mll = "ocamllex",
     mli = "ocaml.interface",
     mly = "menhir",
   },
