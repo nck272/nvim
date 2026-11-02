@@ -60,27 +60,27 @@ return {
           oxlint = {
             root_markers = { ".oxlintrc.json" },
           },
-          ocamllsp = {
-            manual_install = true,
-            cmd = { "dune", "exec", "ocamllsp" },
-            settings = {
-              codelens = { enable = true },
-              inlayHints = { enable = true },
-              syntaxDocumentation = { enable = true },
-            },
-          },
+          -- ocamllsp = {
+          --   manual_install = true,
+          --   cmd = { "dune", "exec", "ocamllsp" },
+          --   settings = {
+          --     codelens = { enable = true },
+          --     inlayHints = { enable = true },
+          --     syntaxDocumentation = { enable = true },
+          --   },
+          -- },
           sqls = {},
           tailwindcss = {
             filetypes = { "typescriptreact", "javascriptreact", "html", "svelte", "astro" },
           },
-          zls = {
-            settings = {
-              zls = {
-                enable_build_on_save = true,
-                build_on_save_step = "check",
-              },
-            },
-          },
+          -- zls = {
+          --   settings = {
+          --     zls = {
+          --       enable_build_on_save = true,
+          --       build_on_save_step = "check",
+          --     },
+          --   },
+          -- },
           rust_analyzer = {
             settings = {
               ["rust-analyzer"] = {

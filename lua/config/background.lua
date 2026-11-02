@@ -112,8 +112,8 @@ M.set = function(bg, fg)
   vim.api.nvim_set_hl(0, "LineNr", { bg = bg })
   vim.api.nvim_set_hl(0, "CursorLineNr", { bg = bg })
 
-  vim.api.nvim_set_hl(0, "StatusLine", { bg = "#d0b892" })
-  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "#d0b892" })
+  vim.api.nvim_set_hl(0, "StatusLine", { bg = "#2d2d2d" })
+  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "#2d2d2d" })
 
   vim.api.nvim_set_hl(0, "TabLine", { bg = bg, fg = "#6c6c6c" })
   vim.api.nvim_set_hl(0, "TabLineSel", { bg = bg, fg = fg })

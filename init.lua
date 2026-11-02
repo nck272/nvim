@@ -9,6 +9,6 @@ require("config.terminal")
 require("config.no-italic")
 
 vim.cmd("hi clear")
-vim.cmd.colorscheme("naysayer")
+vim.cmd.colorscheme("hybrid")
 
-require("config.background").set("#111111", "#d0b892") -- transparent
+-- require("config.background").set("#111111", "#cccccc") -- transparent

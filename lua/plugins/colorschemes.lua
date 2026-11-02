@@ -85,4 +85,15 @@ return {
       terminal_colors = true,
     },
   },
+  {
+    "rockerBOO/boo-colorscheme-nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "HoNamDuong/hybrid.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 }
