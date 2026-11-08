@@ -9,9 +9,9 @@ local s = colorbuddy.styles
 
 Color.new("white", "#d0b892")
 Color.new("red", "#F05E48")
-Color.new("pink", "#E6DB74")
+Color.new("pink", "#ffa500")
 Color.new("green", "#53d549")
-Color.new("yellow", "#E6DB74")
+Color.new("yellow", "#d0b892")
 Color.new("blue", "#72D0C5")
 Color.new("aqua", "#87ffde")
 Color.new("cyan", "#55FFFF")
@@ -73,6 +73,8 @@ Group.new("@lsp.type.enumMember", c.aqua, g.Normal)
 Group.new("@lsp.type.namespace", c.mint, g.Normal)
 Group.new("@lsp.type.type", c.violet, g.Normal)
 Group.new("@lsp.typemod.variable.static", c.white, g.Normal)
+
+Group.new("@markup.strong", c.yellow, g.Normal)
 
 -- Lualine
 local custom = require("lualine.themes.auto")
