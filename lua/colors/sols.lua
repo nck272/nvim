@@ -1,40 +1,33 @@
 local colors = {
-  yellow = "#E6DB74",
-  orange = "#FD971F",
-  red = "#F92672",
-  magenta = "#FD5FF0",
-  blue = "#66D9EF",
-  green = "#A6E22E",
-  cyan = "#A1EFE4",
-  violet = "#AE81FF",
+  yellow = "#fce094",
+  orange = "#f4a261",
+  red = "#ffc0b9",
+  magenta = "#ffcaff",
+  blue = "#66d9ef",
+  green = "#a6dbff",
+  cyan = "#8cf8f7",
+  white = "#EEF1F8",
 
-  background = "#111111",
-  gutter = "#111111",
+  -- background = "#111111",
+  -- gutter = "#111111",
   selection = "#0000ff",
-  text = "#e5e5e5",
+  -- text = "#e5e5e5",
   comment = "#53d549",
-  punctuation = "#ffffff",
-  operator = "#FD971F",
+  punctuation = "#a7a7a7",
+  operator = "#a7a7a7",
   type_ = "#6ceba0",
-  keyword = "#ffffff",
-  variable = "#b4b4b4",
-  function_ = "#ffffff",
-  member = "#b4b4b4",
-  string = "#3ad0b5",
+  keyword = "#ff4a4a",
+  -- variable = "#d5d5d5",
+  -- function_ = "#ffffff",
+  -- member = "#ffffff",
+  -- string = "#3ad0b5",
   constant = "#87ffde",
-  macro = "#FD971F",
+  macro = "#fd971f",
   number = "#87ffde",
-  white = "#ffffff",
   error = "#ff0000",
   warning = "#ffaa00",
-  highlight = "#323232",
-  line_fg = "#737373",
-
-  dimmed_keyword = "#b0b0b0",
-  dimmed_function = "#cccccc",
-  dimmed_variable = "#a0b8c8",
-  dimmed_string = "#2fa89e",
-  dimmed_type = "#79c4a6",
+  -- highlight = "#323232",
+  -- line_fg = "#737373",
 }
 
 vim.cmd("hi clear")
@@ -43,76 +36,72 @@ vim.cmd.colorscheme("default")
 vim.o.background = "dark"
 vim.g.colors_name = "sols"
 
-local set = vim.api.nvim_set_hl
-
 -- Core UI
--- set(0, "Normal", { fg = colors.text, bg = colors.background })
--- set(0, "Cursor", { bg = colors.white })
--- set(0, "Visual", { bg = colors.selection })
--- set(0, "LineNr", { fg = colors.line_fg, bg = colors.background })
--- set(0, "CursorLineNr", { fg = colors.orange, bg = colors.background })
--- set(0, "CursorLine", { bg = colors.highlight })
--- set(0, "ColorColumn", { bg = colors.highlight })
--- set(0, "VertSplit", { fg = colors.line_fg })
--- set(0, "MatchParen", { bg = colors.selection })
+-- vim.api.nvim_set_hl(0, "Normal", { fg = colors.text, bg = colors.background })
+-- vim.api.nvim_set_hl(0, "Cursor", { bg = colors.orange })
+vim.api.nvim_set_hl(0, "Visual", { bg = colors.selection })
+-- vim.api.nvim_set_hl(0, "LineNr", { fg = colors.line_fg, bg = colors.background })
+-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.orange, bg = colors.background })
+-- vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.highlight })
+-- vim.api.nvim_set_hl(0, "ColorColumn", { bg = colors.highlight })
+-- vim.api.nvim_set_hl(0, "VertSplit", { fg = colors.line_fg })
+vim.api.nvim_set_hl(0, "MatchParen", { bg = colors.selection })
 
 -- Syntax
-set(0, "Comment", { fg = colors.comment })
--- set(0, "String", { fg = colors.string })
-set(0, "Number", { fg = colors.number })
-set(0, "Boolean", { fg = colors.constant })
-set(0, "Constant", { fg = colors.constant })
-set(0, "Identifier", { fg = colors.variable })
--- set(0, "Function", { fg = colors.function_ })
--- set(0, "Member", { fg = colors.member })
--- set(0, "Statement", { fg = colors.keyword })
-set(0, "Keyword", { fg = colors.keyword })
-set(0, "Type", { fg = colors.type_ })
-set(0, "Operator", { fg = colors.operator })
-set(0, "PreProc", { fg = colors.macro })
--- set(0, "Punctuation", { fg = colors.punctuation })
--- set(0, "Special", { fg = colors.constant })
--- set(0, "WarningMsg", { fg = colors.warning })
--- set(0, "Error", { fg = colors.error })
+vim.api.nvim_set_hl(0, "Comment", { fg = colors.comment })
+-- vim.api.nvim_set_hl(0, "String", { fg = colors.string })
+vim.api.nvim_set_hl(0, "Number", { fg = colors.number })
+vim.api.nvim_set_hl(0, "Boolean", { fg = colors.constant })
+vim.api.nvim_set_hl(0, "Constant", { fg = colors.constant })
+-- vim.api.nvim_set_hl(0, "Identifier", { fg = colors.variable })
+-- vim.api.nvim_set_hl(0, "Function", { fg = colors.function_ })
+-- vim.api.nvim_set_hl(0, "Member", { fg = colors.member })
+vim.api.nvim_set_hl(0, "Statement", { fg = colors.keyword })
+vim.api.nvim_set_hl(0, "Keyword", { fg = colors.keyword })
+vim.api.nvim_set_hl(0, "Type", { fg = colors.type_ })
+vim.api.nvim_set_hl(0, "Operator", { fg = colors.operator })
+vim.api.nvim_set_hl(0, "PreProc", { fg = colors.macro })
+vim.api.nvim_set_hl(0, "Punctuation", { fg = colors.punctuation })
+vim.api.nvim_set_hl(0, "Special", { fg = colors.constant })
+vim.api.nvim_set_hl(0, "WarningMsg", { fg = colors.warning })
+vim.api.nvim_set_hl(0, "Error", { fg = colors.error })
 
 -- Diagnostics
-set(0, "DiagnosticError", { fg = colors.red })
-set(0, "DiagnosticWarn", { fg = colors.warning })
-set(0, "DiagnosticInfo", { fg = colors.blue })
-set(0, "DiagnosticHint", { fg = colors.cyan })
+vim.api.nvim_set_hl(0, "DiagnosticError", { fg = colors.red })
+vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = colors.warning })
+vim.api.nvim_set_hl(0, "DiagnosticInfo", { fg = colors.blue })
+vim.api.nvim_set_hl(0, "DiagnosticHint", { fg = colors.cyan })
 
 -- Rainbow delimiters (optional)
-set(0, "rainbowcol1", { fg = colors.violet })
-set(0, "rainbowcol2", { fg = colors.blue })
-set(0, "rainbowcol3", { fg = colors.green })
-set(0, "rainbowcol4", { fg = colors.yellow })
-set(0, "rainbowcol5", { fg = colors.orange })
-set(0, "rainbowcol6", { fg = colors.red })
+vim.api.nvim_set_hl(0, "rainbowcol1", { fg = colors.magneta })
+vim.api.nvim_set_hl(0, "rainbowcol2", { fg = colors.blue })
+vim.api.nvim_set_hl(0, "rainbowcol3", { fg = colors.green })
+vim.api.nvim_set_hl(0, "rainbowcol4", { fg = colors.yellow })
+vim.api.nvim_set_hl(0, "rainbowcol5", { fg = colors.orange })
+vim.api.nvim_set_hl(0, "rainbowcol6", { fg = colors.red })
 
 -- Lualine integration
--- set(0, "StatusLine", { fg = colors.lualine_fg, bg = colors.lualine_bg })
--- set(0, "StatusLineNC", { fg = colors.line_fg, bg = colors.gutter })
+-- vim.api.nvim_set_hl(0, "StatusLine", { fg = colors.lualine_fg, bg = colors.lualine_bg })
+-- vim.api.nvim_set_hl(0, "StatusLineNC", { fg = colors.line_fg, bg = colors.gutter })
 
 -- Treesitter highlights
-set(0, "@comment", { link = "Comment" })
--- set(0, "@string", { link = "String" })
-set(0, "@number", { link = "Number" })
-set(0, "@boolean", { link = "Boolean" })
-set(0, "@constant", { link = "Constant" })
--- set(0, "@function", { link = "Function" })
--- set(0, "@function.builtin", { link = "Keyword" })
-set(0, "@variable", { link = "Identifier" })
--- set(0, "@variable.member", { link = "Member" })
-set(0, "@type", { link = "Type" })
-set(0, "@keyword", { link = "Keyword" })
-set(0, "@keyword.function", { link = "Keyword" })
--- set(0, "@field", { link = "Identifier" })
-set(0, "@operator", { link = "Operator" })
--- set(0, "@property", { link = "Identifier" })
--- set(0, "@parameter", { link = "Identifier" })
--- set(0, "@punctuation", { link = "Punctuation" })
-set(0, "@punctuation.delimiter", { link = "Macro" })
+vim.api.nvim_set_hl(0, "@comment", { link = "Comment" })
+-- vim.api.nvim_set_hl(0, "@string", { link = "String" })
+vim.api.nvim_set_hl(0, "@number", { link = "Number" })
+vim.api.nvim_set_hl(0, "@boolean", { link = "Boolean" })
+vim.api.nvim_set_hl(0, "@constant", { link = "Constant" })
+-- vim.api.nvim_set_hl(0, "@function", { link = "Function" })
+-- vim.api.nvim_set_hl(0, "@function.builtin", { link = "Keyword" })
+-- vim.api.nvim_set_hl(0, "@variable", { link = "Identifier" })
+-- vim.api.nvim_set_hl(0, "@variable.member", { link = "Member" })
+vim.api.nvim_set_hl(0, "@type", { link = "Type" })
+vim.api.nvim_set_hl(0, "@keyword", { link = "Keyword" })
+vim.api.nvim_set_hl(0, "@keyword.function", { link = "Keyword" })
+-- vim.api.nvim_set_hl(0, "@field", { link = "Identifier" })
+vim.api.nvim_set_hl(0, "@operator", { link = "Operator" })
+-- vim.api.nvim_set_hl(0, "@property", { link = "Identifier" })
+-- vim.api.nvim_set_hl(0, "@parameter", { link = "Identifier" })
+vim.api.nvim_set_hl(0, "@punctuation", { link = "Punctuation" })
+vim.api.nvim_set_hl(0, "@punctuation.delimiter", { link = "Macro" })
 
--- set(0, "@lsp.type.property", { link = "Member" })
-
-return colors
+-- vim.api.nvim_set_hl(0, "@lsp.type.property", { link = "Member" })
