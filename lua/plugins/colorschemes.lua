@@ -94,6 +94,10 @@ return {
     "HoNamDuong/hybrid.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+  },
+  {
+    "ficd0/ashen.nvim",
+    lazy = false,
+    priority = 1000,
   },
 }

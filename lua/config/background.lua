@@ -6,7 +6,7 @@ M.set_buffer_line = function(bg, fg)
       if name:match("^BufferLine") then
         local hl = vim.api.nvim_get_hl(0, { name = name })
         local cur_bg = name:match("Selected$") and bg or "#272727"
-        local cur_fg = name:match("Selected$") and fg or "#E0E0E0"
+        local cur_fg = name:match("Selected$") and fg or "#d5d5d5"
 
         vim.api.nvim_set_hl(0, name, {
           fg = name:match("^BufferLineDevIcon") and hl.fg or cur_fg,
